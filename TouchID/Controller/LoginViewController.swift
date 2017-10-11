@@ -79,7 +79,7 @@ class LoginViewController: UIViewController {
 		
 		// Get the local authentication context
 		let localAuthContext = LAContext()
-		let reasonText = "Authentication is required to sign in AppCoda"
+		let reasonText = "Use fingerprint for authentication"
 		var authError: NSError?
 		
 		// Check whether the device is capable of using TouchID
