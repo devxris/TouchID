@@ -115,5 +115,19 @@ class LoginViewController: UIViewController {
 			print("Authentication Successfully!")
 			DispatchQueue.main.async { self.performSegue(withIdentifier: "Login", sender: nil) }
 		}
-	}	
+	}
+	
+	@IBAction func authenticateWithPassword() {
+		if emailTextField.text == "hi@appcoda.com" && passwordTextField.text ==
+			"1234" {
+			performSegue(withIdentifier: "showHomeScreen", sender: nil)
+		} else {
+			// Shake to indicate wrong login ID/password
+			loginView.transform = CGAffineTransform(translationX: 25, y: 0)
+			UIView.animate(withDuration: 0.2, delay: 0.0, usingSpringWithDamping:
+				0.15, initialSpringVelocity: 0.3, options: .curveEaseInOut, animations: {
+					self.loginView.transform = CGAffineTransform.identity
+			}, completion: nil)
+		}
+	}
 }
