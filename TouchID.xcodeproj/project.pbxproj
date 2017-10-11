@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		458419911F8E79310096861E /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4584198F1F8E703B0096861E /* LocalAuthentication.framework */; };
 		45C0C24B1F8E6C0B00B039DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0C24A1F8E6C0B00B039DF /* AppDelegate.swift */; };
 		45C0C24D1F8E6C0B00B039DF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0C24C1F8E6C0B00B039DF /* LoginViewController.swift */; };
 		45C0C2501F8E6C0B00B039DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C0C24E1F8E6C0B00B039DF /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				458419911F8E79310096861E /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

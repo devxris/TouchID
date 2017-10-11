@@ -37,6 +37,10 @@ class LoginViewController: UIViewController {
 		return label
 	}()
 	
+	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+		blurEffectView?.frame = view.bounds
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -79,6 +83,7 @@ class LoginViewController: UIViewController {
 		
 		// Get the local authentication context
 		let localAuthContext = LAContext()
+		localAuthContext.localizedFallbackTitle = "Use Email to Login"
 		let reasonText = "Use fingerprint for authentication"
 		var authError: NSError?
 		
@@ -109,11 +114,12 @@ class LoginViewController: UIViewController {
 					default : print(error.localizedDescription)
 					}
 					// fall back to loginView
-					DispatchQueue.main.async { self.showLoginView() }
+					DispatchQueue.main.async { self.showLoginView(); return }
 				}
+			} else {
+				print("Authentication Successfully!")
+				DispatchQueue.main.async { self.performSegue(withIdentifier: "Login", sender: nil) }
 			}
-			print("Authentication Successfully!")
-			DispatchQueue.main.async { self.performSegue(withIdentifier: "Login", sender: nil) }
 		}
 	}
 	
