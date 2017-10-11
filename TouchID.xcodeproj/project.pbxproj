@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		45C0C24B1F8E6C0B00B039DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0C24A1F8E6C0B00B039DF /* AppDelegate.swift */; };
-		45C0C24D1F8E6C0B00B039DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0C24C1F8E6C0B00B039DF /* ViewController.swift */; };
+		45C0C24D1F8E6C0B00B039DF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0C24C1F8E6C0B00B039DF /* LoginViewController.swift */; };
 		45C0C2501F8E6C0B00B039DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C0C24E1F8E6C0B00B039DF /* Main.storyboard */; };
 		45C0C2521F8E6C0B00B039DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45C0C2511F8E6C0B00B039DF /* Assets.xcassets */; };
 		45C0C2551F8E6C0B00B039DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C0C2531F8E6C0B00B039DF /* LaunchScreen.storyboard */; };
+		45C861EF1F8E6E96000FEC3E /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C861ED1F8E6E96000FEC3E /* NewsCell.swift */; };
+		45C861F01F8E6E96000FEC3E /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C861EE1F8E6E96000FEC3E /* NewsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		45C0C2471F8E6C0B00B039DF /* TouchID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C0C24A1F8E6C0B00B039DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		45C0C24C1F8E6C0B00B039DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		45C0C24C1F8E6C0B00B039DF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		45C0C24F1F8E6C0B00B039DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45C0C2511F8E6C0B00B039DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45C0C2541F8E6C0B00B039DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45C0C2561F8E6C0B00B039DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45C861ED1F8E6E96000FEC3E /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		45C861EE1F8E6E96000FEC3E /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,40 @@
 		45C0C2491F8E6C0B00B039DF /* TouchID */ = {
 			isa = PBXGroup;
 			children = (
-				45C0C24A1F8E6C0B00B039DF /* AppDelegate.swift */,
-				45C0C24C1F8E6C0B00B039DF /* ViewController.swift */,
-				45C0C24E1F8E6C0B00B039DF /* Main.storyboard */,
-				45C0C2511F8E6C0B00B039DF /* Assets.xcassets */,
-				45C0C2531F8E6C0B00B039DF /* LaunchScreen.storyboard */,
-				45C0C2561F8E6C0B00B039DF /* Info.plist */,
+				45C0C25C1F8E6C1B00B039DF /* Resources */,
+				45C0C25D1F8E6C2400B039DF /* View */,
+				45C0C25E1F8E6C2A00B039DF /* Controller */,
 			);
 			path = TouchID;
+			sourceTree = "<group>";
+		};
+		45C0C25C1F8E6C1B00B039DF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				45C0C2561F8E6C0B00B039DF /* Info.plist */,
+				45C0C2511F8E6C0B00B039DF /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		45C0C25D1F8E6C2400B039DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				45C0C2531F8E6C0B00B039DF /* LaunchScreen.storyboard */,
+				45C0C24E1F8E6C0B00B039DF /* Main.storyboard */,
+				45C861ED1F8E6E96000FEC3E /* NewsCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45C0C25E1F8E6C2A00B039DF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				45C0C24A1F8E6C0B00B039DF /* AppDelegate.swift */,
+				45C0C24C1F8E6C0B00B039DF /* LoginViewController.swift */,
+				45C861EE1F8E6E96000FEC3E /* NewsTableViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +166,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45C0C24D1F8E6C0B00B039DF /* ViewController.swift in Sources */,
+				45C861F01F8E6E96000FEC3E /* NewsTableViewController.swift in Sources */,
+				45C0C24D1F8E6C0B00B039DF /* LoginViewController.swift in Sources */,
+				45C861EF1F8E6E96000FEC3E /* NewsCell.swift in Sources */,
 				45C0C24B1F8E6C0B00B039DF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +308,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9H46LQG73T;
-				INFOPLIST_FILE = TouchID/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TouchID/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DevXris.TouchID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -291,7 +323,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9H46LQG73T;
-				INFOPLIST_FILE = TouchID/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TouchID/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DevXris.TouchID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
