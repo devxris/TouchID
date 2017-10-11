@@ -120,7 +120,7 @@ class LoginViewController: UIViewController {
 	@IBAction func authenticateWithPassword() {
 		if emailTextField.text == "hi@appcoda.com" && passwordTextField.text ==
 			"1234" {
-			performSegue(withIdentifier: "showHomeScreen", sender: nil)
+			performSegue(withIdentifier: "Login", sender: nil)
 		} else {
 			// Shake to indicate wrong login ID/password
 			loginView.transform = CGAffineTransform(translationX: 25, y: 0)
