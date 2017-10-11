@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class LoginViewController: UIViewController {
 
@@ -57,7 +58,62 @@ class LoginViewController: UIViewController {
 		
 		// Add privacy label into label blur view
 		labelBlurView.contentView.addSubview(privacyLabel)
+		
+		authenticateWithTouchID()
 	}
+	
+	@objc func showLoginView() {
+		// Move the login view off screen
+		loginView.isHidden = true
+		loginView.transform = CGAffineTransform(translationX: 0, y: -700)
+		
+		UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+			
+			self.loginView.isHidden = false
+			self.loginView.transform = CGAffineTransform.identity
+			
+		}, completion: nil)
+	}
+	
+	func authenticateWithTouchID() {
+		
+		// Get the local authentication context
+		let localAuthContext = LAContext()
+		let reasonText = "Authentication is required to sign in AppCoda"
+		var authError: NSError?
+		
+		// Check whether the device is capable of using TouchID
+		if !localAuthContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError) {
+			if let error = authError { print(error.localizedDescription) }
+			// Display the login dialog when Touch ID is not available
+			showLoginView()
+			return
+		}
 
+		// Perform the Touch ID authentication
+		localAuthContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reasonText) { (success, error) in
+			if !success {
+				if let error = error {
+					switch error {
+					case LAError.authenticationFailed: print("Authentication Failed.")
+					case LAError.passcodeNotSet: print("Passcode not set.")
+					case LAError.systemCancel: print("Authentication was cancelled by system.")
+					case LAError.biometryNotEnrolled:
+						print("Authentication could not start because Touch ID has no enrolled fingers.")
+					case LAError.biometryNotAvailable:
+						print("Authentication could not start because Touch ID is not available.")
+					case LAError.biometryLockout :
+						print("Authentication could not start because Touch ID is locked out.")
+					case LAError.userCancel: print("Authentication was cancelled by user.")
+					case LAError.userFallback: print("User tapped the fallback button (Enter Password).")
+					default : print(error.localizedDescription)
+					}
+					// fall back to loginView
+					DispatchQueue.main.async { self.showLoginView() }
+				}
+			}
+			print("Authentication Successfully!")
+			DispatchQueue.main.async { self.performSegue(withIdentifier: "Login", sender: nil) }
+		}
+	}	
 }
-

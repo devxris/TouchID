@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4584198F1F8E703B0096861E /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		45C0C2471F8E6C0B00B039DF /* TouchID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C0C24A1F8E6C0B00B039DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45C0C24C1F8E6C0B00B039DF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -39,11 +40,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4584198E1F8E703A0096861E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4584198F1F8E703B0096861E /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		45C0C23E1F8E6C0B00B039DF = {
 			isa = PBXGroup;
 			children = (
 				45C0C2491F8E6C0B00B039DF /* TouchID */,
 				45C0C2481F8E6C0B00B039DF /* Products */,
+				4584198E1F8E703A0096861E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

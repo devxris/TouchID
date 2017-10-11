@@ -72,6 +72,9 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="authenticateWithPassword" destination="BYZ-38-t0r" eventType="touchUpInside" id="mRt-uA-3IW"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forgot your password?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4II-uW-gJc">
                                         <rect key="frame" x="8" y="233" width="263" height="18"/>
@@ -124,6 +127,7 @@
                         <outlet property="labelBlurView" destination="Hf5-Qg-pvz" id="gv8-ii-i18"/>
                         <outlet property="loginView" destination="bFh-cH-9tU" id="sQ3-Cb-sVt"/>
                         <outlet property="passwordTextField" destination="qh6-lo-imM" id="i5d-IM-g7k"/>
+                        <segue destination="xiA-fb-Geh" kind="presentation" identifier="Login" modalTransitionStyle="crossDissolve" id="YiH-8P-lLE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
